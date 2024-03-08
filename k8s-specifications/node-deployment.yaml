@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staffs-info-app-node-deployment
+  labels:
+    app: staffs-info-app-node-deployment
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: staffs-info-app-node-deployment
+      labels:
+        app: staffs-info-app-node-deployment
+    spec:
+      containers:
+        - name: staffs-info-app-node-cont
+          image: harbor.registry.local/staffs-info-app/node:latest
+          ports:
+          - containerPort: 8123
+          env:
+          - name: DATABASE_HOST
+            value: staffs-info-app-db-svc
+          command:
+            - "/bin/bash"
+            - "-c"
+          args:
+            - "/app/start.sh"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: staffs-info-app-node-deployment

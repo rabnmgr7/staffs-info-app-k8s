@@ -1,0 +1,38 @@
+// views/employee.jade
+
+extends layout
+
+block content
+  h1= title
+
+  if data.length > 0
+    table(style='width:100%; border-collapse: collapse; background-color: #f2f2f2;')
+      thead
+        tr(style='background-color: #333; color: white;')
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Employee ID
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') First Name
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Last Name
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Phone
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Address
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') City
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Full Name
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Email
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Pin
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Creation Date
+          th(style='border: 1px solid #ddd; padding: 8px; text-align: left;') Employee Code
+      tbody
+        each employee in data
+          tr
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.EmployeeId
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.FirstName
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.LastName
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.Phone
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.Address
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.City
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.FullName
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.Email
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.Pin
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.CreationDate
+            td(style='border: 1px solid #ddd; padding: 8px;')= employee.EmployeeCode
+  else
+    p No employee data found.

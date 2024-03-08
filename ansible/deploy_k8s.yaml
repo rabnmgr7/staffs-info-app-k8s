@@ -1,0 +1,14 @@
+---
+- name: Deploy Kubernetes resources
+  hosts: your_k8s_cluster
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Apply Kubernetes configurations
+      command: kubectl apply -f ../k8s-specifications/
+      args:
+        chdir: "{{ playbook_dir }}"
+
+    # Add more tasks if needed, like waiting for deployments to be ready
+    # or any other post-deployment tasks.

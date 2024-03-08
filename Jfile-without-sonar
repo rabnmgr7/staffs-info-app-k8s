@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    environment {
+        scannerHome = tool 'sonar5.0'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh './img-build.sh'
+            }
+        }
+        stage('DeployToStaggingEnv') {
+            steps{
+                sh './run-container.sh'
+            }
+        }
+        stage('PushToRegistry') {
+            steps {
+                timeout(time:5, unit:'MINUTES') {
+                    input message: 'Approve to push image to registry.'
+                }
+                sh '''
+                chmod +x img-push.sh
+                ./img-push.sh'''
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+extends layout
+
+block head
+  // Add the following style block to include custom styling
+  style.
+    .rectangular-btn {
+      display: inline-block;
+      padding: 10px 20px; /* Adjust padding as needed */
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid #333; /* Add border for a rectangular outline */
+      border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+      background-color: #f0f0f0; /* Background color */
+      color: #333; /* Text color */
+    }
+
+block content
+  h1 Staffs Info
+  p Welcome! Explore employee details or add a new employee.
+
+  // Add the following button code with additional styling
+  .button-container
+    a(href='/employee', class='btn btn-primary rectangular-btn')
+      | View Employee Details
+
+    | &nbsp; &nbsp;
+
+    a(href='/addEmployee', class='btn btn-success rectangular-btn')
+      | Add New Employee

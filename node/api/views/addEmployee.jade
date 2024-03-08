@@ -1,0 +1,52 @@
+// views/addEmployee.jade
+
+extends layout
+
+block content
+  .container
+    .row
+      .col-md-6.offset-md-3
+        h1.text-center= title
+
+        form(action='/addEmployee/add', method='post')
+          .form-group
+            label(for='FirstName') First Name:
+            input.form-control(type='text', name='FirstName', placeholder='Enter first name', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='LastName') Last Name:
+            input.form-control(type='text', name='LastName', placeholder='Enter last name', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='Phone') Phone:
+            input.form-control(type='text', name='Phone', placeholder='Enter phone number', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='Address') Address:
+            input.form-control(type='text', name='Address', placeholder='Enter address', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='City') City:
+            input.form-control(type='text', name='City', placeholder='Enter city', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='FullName') Full Name:
+            input.form-control(type='text', name='FullName', placeholder='Enter full name', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='Email') Email:
+            input.form-control(type='email', name='Email', placeholder='Enter email', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='Pin') Pin:
+            input.form-control(type='text', name='Pin', placeholder='Enter PIN', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='CreationDate') Creation Date:
+            input.form-control(type='text', name='CreationDate', placeholder='Enter creation date', required, style='font-size: 16px;')
+
+          .form-group
+            label(for='EmployeeCode') Employee Code:
+            input.form-control(type='text', name='EmployeeCode', placeholder='Enter employee code', required, style='font-size: 16px;')
+
+          button.btn.btn-primary(type='submit', style='font-size: 18px') Add Employee
