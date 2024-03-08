@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: staffs-info-app-node-svc
 spec:
+  type: LoadBalancer
   selector:
     app: staffs-info-app-node-deployment
   ports:
     - protocol: TCP
       port: 8123
       targetPort: 8085
-  type: clusterIP

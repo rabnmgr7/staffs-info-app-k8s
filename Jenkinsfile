@@ -26,15 +26,6 @@ pipeline {
                 sh '''./img-build.sh'''
             }
         }
-        stage('DeployToStaggingEnv') {
-            steps{
-                timeout(time:2, unit:'MINUTES') {
-                    input message: 'Approve to Deploy to Stagging environment.'
-                }
-                echo "Deploying app to stagging environment..."
-                sh '''./run-container.sh'''
-            }
-        }
         stage('PushToRegistry') {
             steps {
                 timeout(time:5, unit:'MINUTES') {
@@ -44,6 +35,15 @@ pipeline {
                 sh '''
                 chmod +x img-push.sh
                 ./img-push.sh''''
+            }
+        }
+        stage('Deploy') {
+            steps {
+                timeout(time:5, unit:'MINUTES') {
+                    input message: 'Approve to Deploy:'
+                }
+                sh '''
+                ./create-service.sh'''
             }
         }
     }
