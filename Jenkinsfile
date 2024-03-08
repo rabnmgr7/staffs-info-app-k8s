@@ -38,12 +38,12 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps{
-                timeout(time:2, unit:'MINUTES') {
-                    input message: 'Approve to Deploy to.'
+            steps {
+                timeout(time:5, unit:'MINUTES') {
+                    input message: 'Approve to Deploy:'
                 }
-                echo "Deploying app to stagging environment..."
-                sh '''./create-service.sh'''
+                sh '''
+                ./create-service.sh'''
             }
         }
     }
