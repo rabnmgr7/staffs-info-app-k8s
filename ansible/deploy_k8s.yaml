@@ -1,14 +1,19 @@
 ---
-- name: Deploy Kubernetes resources
-  hosts: your_k8s_cluster
-  become: true
+- name: Deploy Kubernetes Application
+  hosts: localhost
   gather_facts: false
+  become: true
 
   tasks:
-    - name: Apply Kubernetes configurations
-      command: kubectl apply -f ../k8s-specifications/
-      args:
-        chdir: "{{ playbook_dir }}"
+    - name: Update kubeconfig for EKS cluster
+      command: "aws eks --region us-east-1 update-kubeconfig --name project-eks-rlm"
+      register: update_kubeconfig
 
-    # Add more tasks if needed, like waiting for deployments to be ready
-    # or any other post-deployment tasks.
+    - name: Set KUBECONFIG environment variable
+      ansible.builtin.set_fact:
+        environment:
+          KUBECONFIG: "/var/lib/jenkins/.kube/config"
+
+    - name: Run create-service.sh script
+      script: "../create-service.sh"
+      when: update_kubeconfig.rc == 0  # Only run if updating kubeconfig is successful
