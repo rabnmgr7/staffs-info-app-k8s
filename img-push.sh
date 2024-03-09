@@ -1,3 +1,3 @@
 #!/bin/bash
-docker image push harbor.registry.local/staffs-info-app/node:latest
-docker image push harbor.registry.local/staffs-info-app/db:latest
+docker image push rabnmgr7/staffs-info-app/node:latest
+docker image push rabnmgr7/staffs-info-app/db:latest
