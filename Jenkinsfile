@@ -22,8 +22,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo "Building Docker images..."
-                sh '''./img-build.sh'''
+                sh './img-build.sh'
             }
         }
         stage('PushToRegistry') {
@@ -31,10 +30,9 @@ pipeline {
                 timeout(time:5, unit:'MINUTES') {
                     input message: 'Approve to push image to registry.'
                 }
-                echo "Pushing docker image to Harbor Registry..."
                 sh '''
                 chmod +x img-push.sh
-                ./img-push.sh''''
+                ./img-push.sh'''
             }
         }
         stage('Deploy') {
@@ -43,7 +41,7 @@ pipeline {
                     input message: 'Approve to Deploy:'
                 }
                 sh '''
-                ./create-service.sh'''
+                ansible-playbook ./ansible/deploy.yaml'''
             }
         }
     }
