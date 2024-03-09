@@ -18,7 +18,6 @@ spec:
       containers:
       - name: staffs-info-app-db-cont
         image: rabnmgr7/staffs-info-app-db:latest
-        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3306
         env:
