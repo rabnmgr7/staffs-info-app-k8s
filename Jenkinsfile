@@ -28,9 +28,6 @@ pipeline {
         }
         stage('PushToRegistry') {
             steps {
-                timeout(time:5, unit:'MINUTES') {
-                    input message: 'Approve to push image to registry.'
-                }
                 sh '''echo "Pushing Images to DockerHub!!!"
                 chmod +x img-push.sh
                 ./img-push.sh'''
