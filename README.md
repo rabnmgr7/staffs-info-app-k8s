@@ -20,7 +20,10 @@
      - Prometheus and Graphana: For monitoring purpose.
      - Nexus Artifactory: For storage of artifactory we'll use Nexus.
 
-Guidelines:
+#PROJECT-WORKFLOW
+1. CodeFetch ----> SonarAnalysis ----> ImgBuild ----> PushToRegistry ----> DeployToStagginEnv ----> DeployToProductionEnv ----> GoToStageCodeFetch
+  
+#GUIDELINES
 1. Create two AWS EC2 Instances, remember two instances and EKS cluster should be in same Security group and necessary ports should be opened. Following are the instances and necessary requirements to be installed:
       - prjt-ws-inst: Install Jenkins, kubectl, awscli, registry(if required) in this instance.
       - prjt-sonar-inst: Sonarqube on another instance. 
@@ -35,12 +38,9 @@ Guidelines:
    - Run Command on local machine/prjt-ws-inst: 'kubectl get deployments' and 'kubectl get services'
 9. Check deployments and services are running or not.
 10. If services are running Copy 'EXTERNAL IP:PORT' of staffs-info-app-node:$BUILD_NUMBER service and browse on web.
-11. Click on 'View Employee Details'
+11. Click on 'View Employee Details' or 'Add New Employee'.
 
-Project Workflow:
-1. CodeFetch ----> SonarAnalysis ----> ImgBuild ----> PushToRegistry ----> DeployToStagginEnv ----> DeployToProductionEnv ----> GoToStageCodeFetch
-
-#ScreenShots
+#SCREENSHOTS
 1. Following are the Intro to technologies used and screenshots of the deployed project:
 <p align="center">
     <img src="Screenshots/docker_nodejs.png" alt="docker_compose" width="50%"/>
