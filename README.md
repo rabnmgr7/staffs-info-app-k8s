@@ -21,10 +21,10 @@
      - Nexus Artifactory: For storage of artifactory we'll use Nexus.
 
 Project Workflow:
-CodeFetch ----> SonarAnalysis ----> ImgBuild ----> PushToRegistry ----> DeployToStagginEnv ----> DeployToProductionEnv ----> GoToStageCodeFetch
+1. CodeFetch ----> SonarAnalysis ----> ImgBuild ----> PushToRegistry ----> DeployToStagginEnv ----> DeployToProductionEnv ----> GoToStageCodeFetch
 
 #ScreenShots
-Following are the Intro to technologies used and screenshots of the deployed project:
+1. Following are the Intro to technologies used and screenshots of the deployed project:
 <p align="center">
     <img src="Screenshots/docker_nodejs.png" alt="docker_compose" width="50%"/>
 </p>
