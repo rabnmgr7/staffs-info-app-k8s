@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: staffs-info-app-node-cont
-          image: rabnmgr7/staffs-info-app-node:latest
+          image: rabnmgr7/staffs-info-app-node:$BUILD_NUMBER
           ports:
           - containerPort: 8123
           env:
