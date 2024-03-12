@@ -20,8 +20,11 @@
      - Prometheus and Graphana: For monitoring purpose.
      - Nexus Artifactory: For storage of artifactory we'll use Nexus.
 
-#ScreenShots
+Project Workflow:
+CodeFetch ----> SonarAnalysis ----> ImgBuild ----> PushToRegistry ----> DeployToStagginEnv ----> DeployToProductionEnv ----> GoToStageCodeFetch
 
+#ScreenShots
+Following are the Intro to technologies used and screenshots of the deployed project:
 <p align="center">
     <img src="Screenshots/docker_nodejs.png" alt="docker_compose" width="50%"/>
 </p>
