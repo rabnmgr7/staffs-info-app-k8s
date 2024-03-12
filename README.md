@@ -39,7 +39,7 @@
    - Image on Dockerhub
    - Run Command on local machine/prjt-ws-inst: 'kubectl get deployments' and 'kubectl get services'
 9. Check deployments and services are running or not.
-10. If services are running Copy 'EXTERNAL IP:PORT' of staffs-info-app-node:$BUILD_NUMBER service and browse on web.
+10. If services are running Copy 'EXTERNAL IP:PORT' of staffs-info-app-node-svc service and browse on web.
 11. Click on 'View Employee Details' or 'Add New Employee'.
 
 
