@@ -20,8 +20,10 @@
      - Prometheus and Graphana: For monitoring purpose.
      - Nexus Artifactory: For storage of artifactory we'll use Nexus.
 
+
 #PROJECT-WORKFLOW
 1. CodeFetch ----> SonarAnalysis ----> ImgBuild ----> PushToRegistry ----> DeployToStagginEnv ----> DeployToProductionEnv ----> GoToStageCodeFetch
+
   
 #GUIDELINES
 1. Create two AWS EC2 Instances, remember two instances and EKS cluster should be in same Security group and necessary ports should be opened. Following are the instances and necessary requirements to be installed:
@@ -39,6 +41,7 @@
 9. Check deployments and services are running or not.
 10. If services are running Copy 'EXTERNAL IP:PORT' of staffs-info-app-node:$BUILD_NUMBER service and browse on web.
 11. Click on 'View Employee Details' or 'Add New Employee'.
+
 
 #SCREENSHOTS
 1. Following are the Intro to technologies used and screenshots of the deployed project:
