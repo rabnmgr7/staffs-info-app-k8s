@@ -1,8 +1,24 @@
 #STAFFS-INFO-APP
-In this sample, we will look at the functionality provided by Docker for defining and running multi-container Docker applications.
-
-We are going to use 'MySQL' like our specialized database and 'Node.js' as our platform for creating highly performant web applications.
-
+1. This is a DevOps Workflow project for demonstrating following aspects of SDLC with Agile Method:
+   - Code Management
+   - Version Control System Git.
+   - CI/CD Pipeline with Jenkins for:
+      - testing,
+      - building,
+      - image pushing,
+      - stagging,
+      - deploying and
+   - monitoring
+2. We are going to use 'MySQL' like specialized database and 'Node.js' as our platform for creating highly performant web applications.
+3. Building: Used Docker compose for building Docker Image.
+4. Testing: For Analysis and Testing We used Sonarqube.
+5. Registry: For Image Registry we have used Dockerhub but Harbor registry can also be used.
+6. Stagging and Deployment: We used AWS EKS Cluster (AWS compliance Kubernetes Cluster) which is to be already setup.
+7. Future Enhancement: For future enhancement, We will add following in this project:
+     - Terraform: For AWS EKS Cluster Setup with IaaC (Infrastructure as a code) we'll use Terraform.
+     - Ansible: For Configuration Management we'll use Ansible. Code is already in this project but there need to be error fixed.
+     - Prometheus and Graphana: For monitoring purpose.
+     - Nexus Artifactory: For storage of artifactory we'll use Nexus.
 
 #ScreenShots
 
@@ -22,21 +38,3 @@ We are going to use 'MySQL' like our specialized database and 'Node.js' as our p
 <p align="center">
     <img src="Screenshots/employee.png" alt="docker_compose" width="70%">
 </p>
-
-### IMAGE BUILD
-1. `./img-build.sh`
-
-### RUN THE PROJECT
-2. `./run-container.sh`
-
-### INSPECT YOUR MYSQL CONTAINER(to see your database)
-1. docker ps
-2. docker exec -it YOUR_MYSQL_CONTAINER_ID mysql -u root -p
-3. put mysql password
-4. enter 
-5. use employee;
-6. show tables;
-7. describe EMPLOYEE;
-
-### TO ALTER THE USER INFORMATION OF MYSQL
-1. ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysql-password';
