@@ -20,7 +20,7 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('ImgBuild') {
             steps {
                 sh """echo "Building Docker Images!!!"
                 ./img-build.sh"""
@@ -33,13 +33,19 @@ pipeline {
                 ./img-push.sh'''
             }
         }
-        stage('Deploy') {
+        stage('DeployToStaggingEnv') {
+            steps {
+                sh ''' echo "Deploying Applications..."
+                ./create-service.sh'''
+            }
+        }
+        stage('DeployToProductionEnv') {
             steps {
                 timeout(time:5, unit:'MINUTES') {
                     input message: 'Approve to Deploy:'
                 }
                 sh ''' echo "Deploying Applications..."
-                ansible-playbook ./ansible/deploy.yaml'''
+                ./create-service.sh'''
             }
         }
     }
