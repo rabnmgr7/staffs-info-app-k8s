@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: staffs-info-app-db-cont
-        image: rabnmgr7/staffs-info-app-db:latest
+        image: rabnmgr7/staffs-info-app-db:$BUILD_NUMBER
         ports:
         - containerPort: 3306
         env:
