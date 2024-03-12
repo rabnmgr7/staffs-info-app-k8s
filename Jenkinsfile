@@ -35,7 +35,7 @@ pipeline {
         }
         stage('DeployToStaggingEnv') {
             steps {
-                sh ''' echo "Deploying Applications..."
+                sh ''' echo "Deploying Application to Stagging Environment..."
                 ./create-service.sh'''
             }
         }
@@ -44,7 +44,7 @@ pipeline {
                 timeout(time:5, unit:'MINUTES') {
                     input message: 'Approve to Deploy:'
                 }
-                sh ''' echo "Deploying Applications..."
+                sh ''' echo "Deploying Application to Production Environment..."
                 ./create-service.sh'''
             }
         }
