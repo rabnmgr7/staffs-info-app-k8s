@@ -8,7 +8,7 @@
       - image pushing,
       - stagging,
       - deploying and
-   - monitoring
+      - monitoring
 2. We are going to use 'MySQL' like specialized database and 'Node.js' as our platform for creating highly performant web applications.
 3. Building: Used Docker compose for building Docker Image.
 4. Testing: For Analysis and Testing We used Sonarqube.
