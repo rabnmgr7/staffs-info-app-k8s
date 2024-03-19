@@ -26,7 +26,6 @@ spec:
             - "-c"
           args:
             - "/app/start.sh"
-  replicas: 1
   selector:
     matchLabels:
       app: staffs-info-app-node-deployment
