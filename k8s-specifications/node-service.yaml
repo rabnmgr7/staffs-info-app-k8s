@@ -8,6 +8,6 @@ spec:
     app: staffs-info-app-node-deployment
   ports:
     - protocol: TCP
-      port: 8085
+      port: 30010
       targetPort: 8123
-      nodePort: 8085
+      nodePort: 30010
