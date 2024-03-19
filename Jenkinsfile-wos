@@ -2,9 +2,6 @@ pipeline {
     agent {
         label 'web1-node'
     }
-    environment {
-        scannerHome = tool 'sonar5.0'
-    }
     stages {
         stage('ImgBuild') {
             steps {
