@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: staffs-info-app-node-svc
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: staffs-info-app-node-deployment
   ports:
     - protocol: TCP
       port: 8085
       targetPort: 8123
+      nodePort: 8085
