@@ -1,0 +1,35 @@
+pipeline {
+    agent {
+        label 'web1-node'
+    }
+    environment {
+        scannerHome = tool 'sonar5.0'
+    }
+    stages {
+        stage('ImgBuild') {
+            steps {
+                sh """echo "Building Docker Images!!!"
+                ./img-build.sh"""
+            }
+        }
+        stage('PushToRegistry') {
+            steps {
+                sh '''echo "Pushing Images to DockerHub!!!"
+                chmod +x img-push.sh
+                ./img-push.sh'''
+            }
+        }
+        stage('DeployToProductionEnv') {
+            steps {
+                agent {
+                    label 'shesh-node'
+                }
+                timeout(time:5, unit:'MINUTES') {
+                    input message: 'Approve to Deploy:'
+                }
+                sh ''' echo "Deploying Application to Production Environment..."
+                ./create-service.sh'''
+            }
+        }
+    }
+}
