@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: staffs-info-app-node-svc
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: staffs-info-app-node-deployment
   ports:
