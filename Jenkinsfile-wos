@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'web1-node'
+        label 'slave-shesh-node'
     }
     stages {
         stage('ImgBuild') {
@@ -18,9 +18,6 @@ pipeline {
         }
         stage('DeployToProductionEnv') {
             steps {
-                agent {
-                    label 'slave-shesh-node'
-                }
                 timeout(time:5, unit:'MINUTES') {
                     input message: 'Approve to Deploy:'
                 }
