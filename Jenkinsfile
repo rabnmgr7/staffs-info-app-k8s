@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'web1-node'
+        label 'slave-shesh-node'
     }
     environment {
         scannerHome = tool 'sonar5.0'
@@ -43,9 +43,6 @@ pipeline {
         }
         stage('DeployToProductionEnv') {
             steps {
-                agent {
-                    label 'shesh-node'
-                }
                 timeout(time:5, unit:'MINUTES') {
                     input message: 'Approve to Deploy:'
                 }
