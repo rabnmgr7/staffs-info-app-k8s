@@ -19,7 +19,7 @@ pipeline {
         stage('DeployToProductionEnv') {
             steps {
                 agent {
-                    label 'shesh-node'
+                    label 'slave-shesh-node'
                 }
                 timeout(time:5, unit:'MINUTES') {
                     input message: 'Approve to Deploy:'
