@@ -43,7 +43,7 @@ pipeline {
         }
         stage('DeployToProductionEnv') {
             steps {
-                timeout(time:5, unit:'MINUTES') {
+                timeout(time:1, unit:'DAYS') {
                     input message: 'Approve to Deploy:'
                 }
                 sh ''' echo "Deploying Application to Production Environment..."
