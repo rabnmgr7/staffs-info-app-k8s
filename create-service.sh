@@ -18,3 +18,4 @@ kubectl apply -f ./k8s-specifications/db-deployment.yaml
 kubectl apply -f ./k8s-specifications/db-service.yaml
 kubectl apply -f ./k8s-specifications/node-deployment.yaml
 kubectl apply -f ./k8s-specifications/node-service.yaml
+kubectl port-forward service/staffs-info-app-node-svc 30010:8085 --address 0.0.0.0 | true
