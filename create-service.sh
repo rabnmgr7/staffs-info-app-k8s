@@ -19,7 +19,7 @@ kubectl apply -f ./k8s-specifications/db-service.yaml
 kubectl apply -f ./k8s-specifications/node-deployment.yaml
 kubectl apply -f ./k8s-specifications/node-service.yaml
 kubectl port-forward service/staffs-info-app-node-svc 30010:30010 --address 0.0.0.0 &
-
+sudo lsof -i :30010
 #Getting Deployments and Services Information
 kubectl get deployments
 kubectl get pods
