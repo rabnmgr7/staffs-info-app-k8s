@@ -10,7 +10,7 @@ kubectl delete configmap staffs-info-app-db-config | true
 kubectl delete secret generic staffs-info-app-db-secret | true
 
 #Creating New ConfigMaps and secrets
-kubectl create configmap staffs-info-app-db-config --from-env-file=.env
+kubectl create configmap staffs-info-app-db-config --from-env-file=.config
 kubectl create secret generic staffs-info-app-db-secret --from-env-file=.env
 
 #Creating services
