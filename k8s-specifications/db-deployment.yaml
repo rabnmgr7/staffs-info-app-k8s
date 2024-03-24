@@ -34,7 +34,7 @@ spec:
         - name: MYSQL_USER
           valueFrom:
             configMapKeyRef:
-              name: staffs-info-app-db-config
+              name: staffs-info-app-db-secret
               key: MYSQL_USER
         - name: MYSQL_PASSWORD
           valueFrom:
