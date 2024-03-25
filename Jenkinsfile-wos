@@ -22,7 +22,7 @@ pipeline {
                     input message: 'Approve to Deploy:'
                 }
                 sh ''' echo "Deploying Application to Production Environment..."
-                ansible-playbook -i ./ansible/inventory.ini ./ansible/deploy.yaml'''
+                ansible-playbook -i ./ansible/inventory.ini -vv ./ansible/deploy.yaml'''
             }
         }
     }
