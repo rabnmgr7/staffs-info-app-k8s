@@ -5,17 +5,5 @@
   become: false
 
   tasks:
-    - name: Update kubeconfig for EKS cluster
-      command: "aws eks --region us-east-1 update-kubeconfig --name project-eks-rlm"
-      args:
-        executable: /bin/bash  # Use bash to avoid sudo-related issues
-      register: update_kubeconfig
-
-    - name: Set KUBECONFIG environment variable
-      ansible.builtin.set_fact:
-        environment:
-          KUBECONFIG: "/var/lib/jenkins/.kube/config"
-
     - name: Run create-service.sh script
       script: "../create-service.sh"
-      when: update_kubeconfig.rc == 0 # Only run if updating kubeconfig is successful
