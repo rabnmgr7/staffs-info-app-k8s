@@ -1,6 +1,6 @@
 ---
 - name: Deploy Kubernetes Application
-  hosts: localhost
+  hosts: shesh
   gather_facts: false
   become: false
 
