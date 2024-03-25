@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'slave-shesh-node'
+    }
     stages {
         stage('ImgBuild') {
             steps {
@@ -15,9 +17,6 @@ pipeline {
             }
         }
         stage('DeployToProductionEnv') {
-            agent {
-                label 'slave-shesh-node'
-            }
             steps {
                 timeout(time:1, unit:'DAYS') {
                     input message: 'Approve to Deploy:'
