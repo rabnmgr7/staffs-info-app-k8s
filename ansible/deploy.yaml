@@ -1,9 +1,13 @@
 ---
-- name: Deploy Kubernetes Application
+- name: Run create-service.sh script
   hosts: shesh
-  gather_facts: false
   become: false
-
   tasks:
-    - name: Run create-service.sh script
-      script: "../create-service.sh"
+    - name: Copy create-service.sh script to remote host
+      copy:
+        src: ../create-service.sh
+        dest: /tmp/create-service.sh
+        mode: 0755 #Ensure the script is executable
+        
+    - name: Execute create-service.sh script
+      script: /tmp/create-service.sh
