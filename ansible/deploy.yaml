@@ -18,4 +18,4 @@
         dest: /home/shesh/k8s/k8s-specifications/
 
     - name: Execute create-service.sh script
-      script: /home/shesh/k8s/create-service.sh
+      command: cd /home/shesh/k8s/ | ./create-service.sh
