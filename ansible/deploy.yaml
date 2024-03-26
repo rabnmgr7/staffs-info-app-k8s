@@ -19,6 +19,6 @@
 
     - name: show contents of k8s directory
       command: ls /home/shesh/k8s/
-      
+
     - name: Execute create-service.sh script
-      script: /home/shesh/create-service.sh
+      script: /home/shesh/k8s/create-service.sh
