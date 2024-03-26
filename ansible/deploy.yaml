@@ -15,7 +15,7 @@
     - name: Copy k8s-specifications directory
       synchronize:
         src: k8s-specifications
-        dest: /home/shesh/k8s/k8s-specifications/
+        dest: /home/shesh/k8s/
 
     - name: show contents of k8s directory
       command: ls /home/shesh/k8s/
