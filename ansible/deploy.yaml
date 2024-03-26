@@ -2,12 +2,6 @@
 - name: Run create-service.sh script
   hosts: shesh
   become: false
-  tasks:
-    - name: Copy create-service.sh script to remote host
-      copy:
-        src: ../create-service.sh
-        dest: /tmp/create-service.sh
-        mode: 0755 #Ensure the script is executable
-        
+  tasks:    
     - name: Execute create-service.sh script
-      script: /tmp/create-service.sh
+      script: ../create-service.sh
