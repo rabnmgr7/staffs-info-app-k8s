@@ -4,6 +4,6 @@
   become: false
   tasks:
     - name: Show path
-      script: "pwd"
+      command: pwd
     - name: Execute create-service.sh script
       script: "./test.sh"
