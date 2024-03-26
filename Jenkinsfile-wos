@@ -24,8 +24,8 @@ pipeline {
                 sh ''' echo "Deploying Application to Production Environment..."
                 chmod +x ./ansible/create-service.sh
                 chmod +x ./ansible/test.sh
-                ansible-playbook -i ./ansible/inventory.ini -vvv ./ansible/test.yaml
-                ansible-playbook -i ./ansible/inventory.ini -vvv ./ansible/deploy.yaml'''
+                ansible-playbook -i ./ansible/inventory.ini -vv ./ansible/test.yaml
+                ansible-playbook -i ./ansible/inventory.ini -vv ./ansible/deploy.yaml'''
             }
         }
     }
