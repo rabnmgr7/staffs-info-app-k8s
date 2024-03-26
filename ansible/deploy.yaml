@@ -17,5 +17,8 @@
         src: k8s-specifications
         dest: /home/shesh/k8s/k8s-specifications/
 
+    - name: Change directory
+      command: cd /home/shesh/k8s/
+      
     - name: Execute create-service.sh script
-      command: cd /home/shesh/k8s/ | ./create-service.sh
+      script: ./create-service.sh
