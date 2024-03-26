@@ -3,22 +3,25 @@
   hosts: shesh
   become: false
   tasks:
+    - name: Remove existing directory
+      command: rm -rf ~/k8s/
+
     - name: Create directory
-      command: mkdir -p /home/shesh/k8s/
+      command: mkdir -p ~/k8s/
 
     - name: Copy script to remote hosts
       copy:
         src: create-service.sh
-        dest: /home/shesh/k8s/create-service.sh
+        dest: ~/k8s/create-service.sh
         mode: 0755
   
     - name: Copy k8s-specifications directory
       synchronize:
         src: k8s-specifications
-        dest: /home/shesh/k8s/
+        dest: ~/k8s/
 
     - name: show contents of k8s directory
-      command: ls /home/shesh/k8s/
+      command: ls ~/k8s/
 
     - name: Execute create-service.sh script
-      script: /home/shesh/k8s/create-service.sh
+      script: ~/k8s/create-service.sh
