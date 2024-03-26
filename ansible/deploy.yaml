@@ -2,6 +2,20 @@
 - name: create service play
   hosts: shesh
   become: false
-  tasks:    
+  tasks:
+    - name: Create directory
+      command: mkdir -p /home/shesh/k8s/
+
+    - name: Copy script to remote hosts
+      copy:
+        src: create-service.sh
+        dest: /home/shesh/k8s/create-service.sh
+        mode: 755
+  
+    - name: Copy k8s-specifications directory
+      synchronize:
+        src: k8s-specifications
+        dest: /home/shesh/k8s/k8s-specifications/
+
     - name: Execute create-service.sh script
-      script: ./create-service.sh
+      script: /home/shesh/k8s/create-service.sh
