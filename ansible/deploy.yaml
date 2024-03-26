@@ -1,6 +1,6 @@
 ---
 - name: create service play
-  hosts: shesh
+  hosts: webservergroup
   become: false
   tasks:
     - name: Remove existing directory
