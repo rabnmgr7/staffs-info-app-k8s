@@ -14,7 +14,7 @@ kubectl create configmap staffs-info-app-db-config --from-env-file="$HOME/k8s/k8
 kubectl create secret generic staffs-info-app-db-secret --from-env-file="$HOME/k8s/k8s-specifications/.env"
 
 #Creating services
-kubectl apply -f $HOME/k8s-specifications/db-deployment.yaml
+kubectl apply -f $HOME/k8s/k8s-specifications/db-deployment.yaml
 kubectl apply -f $HOME/k8s/k8s-specifications/db-service.yaml
 kubectl apply -f $HOME/k8s/k8s-specifications/node-deployment.yaml
 kubectl apply -f $HOME/k8s/k8s-specifications/node-service.yaml
