@@ -1,0 +1,9 @@
+---
+- name: Run create-service.sh script
+  hosts: shesh
+  become: false
+  tasks:
+    - name: Show path
+      script: "pwd"
+    - name: Execute create-service.sh script
+      script: "./test.sh"
