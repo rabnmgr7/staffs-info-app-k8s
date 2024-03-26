@@ -10,7 +10,7 @@
       copy:
         src: create-service.sh
         dest: /home/shesh/k8s/create-service.sh
-        mode: 755
+        mode: 0755
   
     - name: Copy k8s-specifications directory
       synchronize:
