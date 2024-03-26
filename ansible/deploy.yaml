@@ -1,5 +1,5 @@
 ---
-- name: Run create-service.sh script
+- name: create service play
   hosts: shesh
   become: false
   tasks:    
