@@ -4,4 +4,4 @@
   become: false
   tasks:    
     - name: Execute create-service.sh script
-      script: ./ansible/create-service.sh
+      script: ./create-service.sh
