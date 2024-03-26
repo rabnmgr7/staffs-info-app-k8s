@@ -1,9 +1,0 @@
----
-- name: test play
-  hosts: shesh
-  become: false
-  tasks:
-    - name: Show path
-      command: pwd
-    - name: execute test.sh script
-      script: "./test.sh"
