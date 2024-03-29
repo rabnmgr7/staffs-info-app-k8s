@@ -1,6 +1,8 @@
 ---
 - name: create service play
   hosts: webservergroup
+  vars_files:
+    - ./group_vars/all/credentials.yml
   become: false
   tasks:
     - name: Remove existing directory
