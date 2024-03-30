@@ -1,3 +1,8 @@
+#BRANCHES
+1. main: For AWS EKS Cluster
+2. nodePort: Local Deployment
+3. nodePort-ans: Local Deployment using Ansible ("Currently Stable")
+
 #STAFFS-INFO-APP
 1. This is a DevOps Workflow project for demonstrating following aspects of SDLC with Agile Method:
    - Code Management
