@@ -1,6 +1,6 @@
 #!/bin/bash
-node="staffs-info-app-node"
-db="staffs-info-app-db"
+node="rabnmgr7/staffs-info-app-node"
+db="rabnmgr7/staffs-info-app-db"
 
 # List of image names to remove
 images=(
