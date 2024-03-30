@@ -26,5 +26,5 @@ kubectl get deployments
 kubectl get pods
 kubectl get services
 
-#Removing configmap and secrets
+#Removing project directory
 rm -rf $HOME/k8s/
