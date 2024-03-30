@@ -25,3 +25,6 @@
 
     - name: Execute create-service.sh script
       script: ~/k8s/create-service.sh
+
+    - name: Remove existing directory
+      command: rm -rf ~/k8s/

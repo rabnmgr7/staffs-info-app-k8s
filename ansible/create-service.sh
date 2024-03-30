@@ -25,6 +25,3 @@ sudo lsof -i :30010
 kubectl get deployments
 kubectl get pods
 kubectl get services
-
-#Removing project directory
-rm -rf $HOME/k8s/
