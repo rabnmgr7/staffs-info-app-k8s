@@ -26,5 +26,14 @@ pipeline {
                 ansible-playbook -i ./ansible/inventory.ini -vv ./ansible/deploy.yaml'''
             }
         }
+        stage('CleanWorkspace') {
+            steps {
+                sh '''
+                echo "Removing Image from Workspace"
+                chmod +x img-remove.sh
+                ./img-remove.sh
+                '''
+            }
+        }
     }
 }
