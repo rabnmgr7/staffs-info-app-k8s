@@ -16,6 +16,15 @@ pipeline {
                 ./img-push.sh'''
             }
         }
+        stage('CleanWorkspace') {
+            steps {
+                sh '''
+                echo "Removing Image from Workspace"
+                chmod +x img-remove.sh
+                ./img-remove.sh
+                '''
+            }
+        }
         stage('DeployToProductionEnv') {
             steps {
                 timeout(time:1, unit:'DAYS') {
@@ -24,15 +33,6 @@ pipeline {
                 sh ''' echo "Deploying Application to Production Environment..."
                 chmod +x ./ansible/create-service.sh
                 ansible-playbook -i ./ansible/inventory.ini -vv ./ansible/deploy.yaml'''
-            }
-        }
-        stage('CleanWorkspace') {
-            steps {
-                sh '''
-                echo "Removing Image from Workspace"
-                chmod +x img-remove.sh
-                ./img-remove.sh
-                '''
             }
         }
     }
