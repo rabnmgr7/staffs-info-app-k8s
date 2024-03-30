@@ -25,3 +25,7 @@ sudo lsof -i :30010
 kubectl get deployments
 kubectl get pods
 kubectl get services
+
+#Removing configmap and secrets
+rm $HOME/k8s/k8s-specifications/.config
+rm $HOME/k8s/k8s-specifications/.env
