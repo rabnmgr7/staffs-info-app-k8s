@@ -10,6 +10,8 @@ images=(
     "$db:latest"
 )
 
+#To which host this script is running
+echo "Running on host: $HOSTNAME"
 #Loop over the array and remove each image
 for image in "${images[@]}"; do
     docker image rm -f "$image"
