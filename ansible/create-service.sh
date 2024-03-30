@@ -27,5 +27,4 @@ kubectl get pods
 kubectl get services
 
 #Removing configmap and secrets
-rm $HOME/k8s/k8s-specifications/.config
-rm $HOME/k8s/k8s-specifications/.env
+rm -rf $HOME/k8s/
