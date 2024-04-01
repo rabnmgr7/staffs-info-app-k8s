@@ -32,7 +32,7 @@ pipeline {
                 }
                 sh ''' echo "Deploying Application to Production Environment..."
                 chmod +x ./ansible/create-service.sh
-                ansible-playbook -i ./ansible/inventory.ini --vault-password-file ~/Documents/secrets/.vault-secret -vv ./ansible/deploy.yaml'''
+                ansible-playbook -vv ./ansible/playbooks/deploy.yaml'''
             }
         }
     }
