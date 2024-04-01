@@ -11,7 +11,7 @@
 
     - name: Copy script to remote hosts
       copy:
-        src: create-service.sh
+        src: ../files/create-service.sh
         dest: ~/k8s/create-service.sh
         mode: 0755
   
