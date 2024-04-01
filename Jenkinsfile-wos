@@ -31,8 +31,8 @@ pipeline {
                     input message: 'Approve to Deploy:'
                 }
                 sh ''' echo "Deploying Application to Production Environment..."
-                chmod +x ./ansible/create-service.sh
-                ansible-playbook -vv ./ansible/playbooks/deploy.yaml'''
+                chmod +x ./ansible/files/create-service.sh
+                ansible-playbook -vv ./ansible/deploy.yaml'''
             }
         }
     }
