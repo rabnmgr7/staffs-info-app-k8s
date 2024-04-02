@@ -4,7 +4,7 @@
 3. nodePort-ans: Local Deployment using Ansible ("Currently Stable")
 
 #STAFFS-INFO-APP
-1. This is a DevOps Workflow project for demonstrating following aspects of SDLC with Agile Method:
+1. This is a DevOps Workflow project for demonstrating following aspects of SDLC:
    - Code Management
    - Version Control System Git.
    - CI/CD Pipeline with Jenkins for:
