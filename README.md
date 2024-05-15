@@ -1,5 +1,5 @@
 #STAFFS-INFO-APP
-1. This is a DevOps Workflow project for demonstrating following aspects of SDLC with Agile Method:
+1. This is a DevOps Workflow project for demonstrating following aspects of SDLC with DevOps Method:
    - Code Management
    - Version Control System Git.
    - CI/CD Pipeline with Jenkins for:
